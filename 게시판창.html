@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<?
+	$connect=mysql_connect("localhost", "sohyun", "1234") or 
+	die("SQL server에 연결할 수 없습니다.");
+	
+	mysql_select_db("sohyun_db",$connect);
+	
+	$scale=10;
+	
+	if($mode=="search")
+	{
+	if(!$search)
+	{
+		echo("
+			<script>
+			window.alert("검색할 단어를 입력하세요!");
+			history.go(-1);
+			</script>
+			");
+			exit;
+		}
+		$sql="select * from $table where $find like "$search%"
+			order by num desc";
+		}			
+		else 
+		{
+			$sql="select * from $table order by num desc";
+		}
+		
+		$result=mysql_query($sql, $connect);
+		$total_record=mysql_num_rows($result);
+		
+		if($total_record % scale == 0)
+			$total_page=floor($total_record/$scale);
+		else
+			$total_page=floor($total_record/$scale)+1;
+			
+		if(!$page)
+			$page=1;
+			
+		
+		$start($page -1) * $scale;
+		$number=$total_record - $start;
+	?>
+	<h2>자기소개게시판</h2>
+	<form name="board_form" method="post"
+	action="list.php?table=<?=$table?>&mode=search">
+	<div id="list_search">
+	<div id="list_search1"> 총 <?=$total_record ?>개의 게시물이 있습니다. </div>
+	<div id="list_search2"> 
+	<div id="list_search3">
+		<select name="find">
+			<option value='subject'>제목</option>
+			<option value='subject'>내용</option>
+			<option value='subject'>이름</option>
+		</select></div>
+	<div id="list_search4"><input type="text" name="search"></div>
+	<div id="list_search5"><input type="button" name="확인"></div>
+	</div>
+	</form>
+	<div calss="clear"></div>
+	
+	<div id="list_top_title">제목		내용		이름
+	</div>
+	
+	<div id="list_content">
+	<?
+		for($i=$start;$i<$start+$scale && $i<$total_record;$i++)
+		{
+			mysql_data_seek($result,$i);
+			$row=mysql_fetch_array($result);
+			$item_num=$row(num);
+			$item_id=$row(id);
+			$item_name=$row(name);
+			$item_subject=$str_replace(" ","&nbsp;",$row[subject]);
+	?>
+	<div id='list_item'>
+	<div id='list_item1'><?=$number ?></div>
+	<div id='list_item2'><a href="출력프레임.html?table=<?=$table?>
+	&num=<?=$item_num?>&page=<?=$page=<?=$page?>"><?=$item_subject?></a></div>	
+	</div>
+	<?
+		$number--;
+		}
+	?>
+	
+	<div id="page_button">
+	<div id="page_num">
+	<?
+		for($i=1;$i<=$total_page;$i++)
+		{
+			if($i=1;$i<=$total_page;$i++)
+			{
+				if($page=$i)
+				{
+					echo"<b> $i </b>";
+				}
+				else
+				{
+					echo "<a href='게시판창.html?table=$table&page=$i'>$i </a>";
+				}
+			}
+		?>
+	</div>
+	<div id="button">
+	<a href='게시판창.html?table=<?=$table?>&page=<?=$page?>'>
+	<?
+		if($userid)
+		{
+	?>
+	<a href="글쓰기페이지.php?table=<?$table?>">
+	
+	<?
+		}
+	?>
+	</div>
+	</div><!-- end of page_button -->
+	</div><!-- end of list content -->
+	<div class="clear"></div>
+	
+	</div><!--end of page_button -->
+	</div><!-- end of list content -->
+	<div class="clear"></div>
+	
+	</div><!-- end of col2 -->
+	</div><! -- end of content -->
+	</div><!-- end of wrap -->
+	
+	</body>
+	</html>
+	

@@ -1,0 +1,21 @@
+<html><meta charset="utf-8">
+<?php
+	$connect=mysql_connect("localhost", "sohyun", "1234") or 
+	die("SQL server에 연결할 수 없습니다.");
+	
+	mysql_select_db("sohyun_db",$connect);
+	
+	$sql="insert into member(id, pass, name)";
+	$sql.="values('$id', '$pass', '$name')";
+	
+	mysql_query($sql, $connect);
+	
+	mysql_close();
+	
+	echo("
+	  <script>
+	    location.replce('출력프레임.html');   ///
+		</script>
+		");
+?>
+</html>
