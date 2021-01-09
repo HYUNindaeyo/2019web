@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="format-detection"content="telephone=no"/>
+  <title>jquery mobile</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="css/freelancer.min.css" rel="stylesheet">
+
+ 
+<link rel="stylesheet" href="./jqueryMobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+<script src="./jquery/jquery-1.11.0.js"></script>
+<script src="./jqueryMobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+ 
+<title>영화예매하기</title>
+</head>
+
+<body id="page-top">
+<form name="member_form" method="post" action="login.php">  <!-- 코드수정 -->
+<input type="hidden" name="title" value="로그인 양식">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Welcome to ours SO HYUN JIN CINEMA</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="insert.html">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- About Section -->
+  <section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+
+      <!-- About Section Heading --><br><br><br>
+      <h2 class="page-section-heading text-center text-uppercase text-white">영화예매하기</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- About Section Content -->
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <p class="lead">룰루랄라<br>즐거운 영화 관람 되세요.</p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead">영화 예매 하기 전 샌택한 영화가 맞는지 확인해주세요!</p>
+        </div>
+      </div>
+	  <br><br><br>
+	  
+	        <!-- Contact Section Form -->
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+          <form name="sentMessage" id="contactForm" novalidate="novalidate">
+			<div role="main" class="ui-content1">
+			
+				  <!-- 영화 선택-->
+				<label>영화 선택</label>
+				<div class="input-group">
+				<input type="text" class="form-control" aria-label="Text input with dropdown button">
+					
+					
+					<div class="input-group-append">
+						<!--
+						<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+						<div class="dropdown-menu">
+							  <a class="dropdown-item" href="#">어벤져스: 엔드게임 (Avengers: Endgame, 2019)</a>
+							  <a class="dropdown-item" href="#">아이언맨 3 (Iron Man 3, 2013)</a>
+							  <a class="dropdown-item" href="#">토르: 라그나로크 (Thor: Ragnarok, 2017)</a>
+							  <a class="dropdown-item" href="#">캡틴 아메리카: 윈터 솔져 (Captain America: The Winter Soldier, 2014)</a>
+							  <a class="dropdown-item" href="#">블랙 팬서 (Black Panther, 2018)</a>
+							  <a class="dropdown-item" href="#">스파이더맨: 파 프롬 홈 (Spider-Man: Far From Home, 2019)</a>
+							<div role="separator" class="dropdown-divider"></div>
+							  <a class="dropdown-item" href="#">MARVEL</a>
+						</div>
+						-->
+						<select id="movieName">
+						<option value="1">어벤져스: 엔드게임 (Avengers: Endgame, 2019)</option>
+						<option value="2">아이언맨 3 (Iron Man 3, 2013)</option>
+						<option value="3">토르: 라그나로크 (Thor: Ragnarok, 2017)</option>
+						<option value="4">캡틴 아메리카: 윈터 솔져 (Captain America: The Winter Soldier, 2014)</option>
+						<option value="5">블랙 팬서 (Black Panther, 2018)</option>
+						<option value="6">스파이더맨: 파 프롬 홈 (Spider-Man: Far From Home, 2019)</option>
+						</select>
+						
+						
+						
+					</div> 
+					
+					
+					
+				</div>
+				
+					<br><br><br>
+					<div class="control-group">
+						<div class="form-group floating-label-form-group controls mb-0 pb-2">
+						<h5>DATE</h5>
+						<label for="txtDate">Date</label><br><input type="date" id="txtDate">
+						</div>
+					</div>
+					
+					<br><br>
+					<div class="control-group">
+					  <div class="form-group floating-label-form-group controls mb-0 pb-2">
+					  <h5>TIME</h5>
+					  <label for="txtTime">Time</label><br><input type="time" id="txtTime">
+					</div></div>	
+					
+					
+	
+                <p class="help-block text-danger"></p>
+				<br><br><br>
+				<div class="control-group">
+					
+						  <h5>인원</h5>
+							<div role="main" class="ui-content2">
+								<input type="radio" name="chkChoice" id="chkChoice1">
+								<label for="chkChoice1">1명</label>
+								<input type="radio" name="chkChoice" id="chkChoice1">
+								<label for="chkChoice1">2명</label>
+								<input type="radio" name="chkChoice" id="chkChoice1">
+								<label for="chkChoice1">3명</label>
+								<div id="divResult"></div>
+							</div>
+					
+				</div>
+
+				
+				
+            </div>
+         </div>			
+	  </div>
+			<div data-role="footer" data-position="fixed"></div>
+	</div>
+
+            <br>
+            <div id="success"></div>
+        
+          </form>
+        </div>
+      </div>
+	  
+
+      <!-- About Section Button -->
+      <div class="text-center mt-4"><!-- 코드수정 로그인 되도록-->
+        <a class="btn btn-xl btn-outline-light" href="영화예매_좌석선택.html">
+          NEXT
+        </a>
+      </div>
+
+    </div>
+  </section>
+  
+
+  
+ </body>
+  

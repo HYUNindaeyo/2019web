@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -14,7 +15,16 @@
 
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection"content="telephone=no"/>
+<title>jquery mobile</title>
+ 
+<link rel="stylesheet" href="./jqueryMobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+<script src="./jquery/jquery-1.11.0.js"></script>
+<script src="./jqueryMobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+ 
+<title>결제창</title>
 </head>
 <body>
 <form name="mem_form" method="post" action="insert.html">  <!-- 코드수정 -->
@@ -47,7 +57,7 @@
 
       <!-- Contact Section Heading -->
 	  <br><br><br>
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Sign Up</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">결제창</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom">
@@ -57,70 +67,71 @@
         </div>
         <div class="divider-custom-line"></div>
       </div>
-
+	  
       <!-- Contact Section Form -->
+	  <div role="main" class="ui-content1">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
           <form name="sentMessage" id="contactForm" novalidate="novalidate">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Name</label>
-                <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-			<div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>ID</label>
-                <input class="form-control" id="id" type="text" placeholder="ID" required="required" data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-			<div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Password</label>
-                <input class="form-control" id="passwd" type="text" placeholder="Password" required="required" data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-			<div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Password Check</label>
-                <input class="form-control" id="passwdcheck" type="text" placeholder="Password Check" required="required" data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Email Address</label>
-                <input class="form-control" id="email" type="email" placeholder="Email Address" data-validation-required-message="Please enter your email address.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Phone Number</label>
-                <input class="form-control" id="phone" type="tel" placeholder="Phone Number" data-validation-required-message="Please enter your phone number.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            
-			 <div id="success"></div>
-          
-		
+           
+		   <div class="control-group">
+		    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+			<br><label>카드 종류</label>
+			<input class="form-control" id="카드 종류" type="text" placeholder="카드 종류" data-validation-required-message="Please check.">
+			<select id="movieName">
+				<option value="1">visa</option>
+				<option value="2">master card</option>
+			</select>
+			</div>
+			</div>
 			
+			<div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>카드명의</label>
+                <input class="form-control" id="cardowner type="text" placeholder="Card Owner" data-validation-required-message="Please enter card owner.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+			
+			<div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>카드번호</label>
+                <input class="form-control" id="cardnum" type="text" placeholder="Card Number" required="required" data-validation-required-message="Please enter card num.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+			
+			<div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>CVC</label>
+                <input class="form-control" id="cardcvc type="text" placeholder="CVC" required="required" data-validation-required-message="Please enter cvc num.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+			
+			<div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>유효 기간 yy/mm</label>
+                <input class="form-control" id="유효기간" type="text" placeholder="yy" required="required" >
+				<input class="form-control" id="유효기간" type="text" placeholder="mm" required="required">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+			 <div id="success"></div>
           </form>
         </div>
       </div>
 	  
 	  
 	   <br><br>
-            <div class="text-center mt-4">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton"> <i class="fas fa-download mr-2"></i>
-			  Sign up</button>
-            </div>
-
+       <div class="text-center mt-4"><!-- 코드수정 로그인 되도록-->
+        <a  href="영화예매_완료창.html">
+          결제하기
+        </a>
+      </div>
     </div>
+	</div>
   </section> 
   </body>
+  </html>
